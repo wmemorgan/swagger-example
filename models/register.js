@@ -25,8 +25,9 @@ export async function update(pg, name, address, password, id) {
   )
 }
 
-// export async function deleteId(pg, id) {
-//   return pg.rows(
-//     `DELETE FROM users WHERE id=$1`
-//   )
-// }
+export async function deleteId(pg, id) {
+  return pg.rows(
+    `DELETE FROM users WHERE id=$1 `,
+    id
+  )
+}

@@ -9,3 +9,5 @@ CREATE TABLE users
 SELECT * FROM users
 
 DROP TABLE users
+
+DELETE FROM users WHERE id=10

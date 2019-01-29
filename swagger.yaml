@@ -96,6 +96,19 @@ paths:
           description: Successful
           schema:
             type: string
+    delete:
+      tags:
+        - Register
+      operationId: DeleteRegisteredUserByID
+      parameters:
+        - $ref: '#/parameters/id'
+      description: | 
+        Delete Register User
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: string            
 parameters:
   id:
     in: path
