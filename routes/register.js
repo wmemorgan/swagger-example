@@ -9,6 +9,7 @@ export function routes(router) {
         const id = await insert(postgres(req), name, address, password)
         console.log(`Record created:`, id[0])
         res.send(id[0].id)
+        //res.sendStatus(200)
       })
       .get('/register', async (req, res) => {
         const users = await retrieveAll(postgres(req))
@@ -16,6 +17,7 @@ export function routes(router) {
       })
       .get('/register/:id', async (req, res) => {
         const users = await retrieve(postgres(req), req.params.id)
+        console.log(`ID info received: ${JSON.stringify(req.params.id)}`)
         if (!users[0]) {
           res.send(`Record not found`)
         }

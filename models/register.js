@@ -1,3 +1,4 @@
+
 export async function insert(pg, name, address, password) {
   return pg.rows(
     `INSERT INTO users(name, address, password) VALUES($1, $2, $3) RETURNING id, name, address`,
